@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="百花谷，百花谷补单，百花谷补单平台，百花谷登陆，百花谷平台，百花谷App">
 <meta name="description" content="百花谷补单平台最安全的买手资源，最专业的服务，最完善的补单功能，收费性价比最高，专业打造爆款，有效规避淘宝降权">
 <meta name="theme-color" content="#364fc7">
-<title>百花谷补单平台---介绍注册页</title>
+<title>百花谷：自动授权精准验号系统及买号筛选标准公告 | 百花谷补单平台---介绍注册页</title>
 <link rel="shortcut icon" href="http://ts0120.github.io/favicon.ico?v=1582028485397">
 <link rel="stylesheet" href="http://ts0120.github.io/styles/main.css">
 
@@ -25,9 +25,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-      <meta name="description" content="百花谷补单平台最安全的买手资源，最专业的服务，最完善的补单功能，收费性价比最高，专业打造爆款，有效规避淘宝降权">
+    <meta name="description" content="百花谷：自动授权精准验号系统及买号筛选标准公告" />
+    <meta name="keywords" content="" />
   </head>
-  <body>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<body>
     <div class="head-top-line"></div>
     <div class="header-box">
       
@@ -97,10 +112,16 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div class="sidebar">
-    
+          
+
+<div class="sidebar">
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="http://ts0120.github.io/images/avatar.png"/>
@@ -167,145 +188,176 @@
   </div>
 
 </div>
-</div>
-          <div class="section-box box-shadow-wrapper">
-            <section class="section archives-section bg-color posts-expand">
-              
-
-<div class="bg-color">
-  <div class="archive-timeline-box">
-    <div class="archive-timeline-title">
-      
-        <h2>非常好！目前共计7篇日志，继续努力！</h2>
-      
+        
+      </div>
     </div>
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+
+  if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+    let hasFix = false;
+    let scrollEl = document.querySelector('.main-continer');
+    let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+    window.addEventListener('scroll', function(e) {
+    if (document.scrollingElement.scrollTop >= limitTop) {
+      if (!hasFix) {
+        sidebar.classList.add('sidebar-fixed');
+        hasFix = true;
+      }
+    } else {
+      if (hasFix) {
+        sidebar.classList.remove('sidebar-fixed');
+        hasFix = false;
+      }
+    }
+  });
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <div class="article-box">
+    <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="http://ts0120.github.io/post/bai-hua-gu-zi-dong-shou-quan-jing-zhun-yan-hao-xi-tong-ji-mai-hao-shai-xuan-biao-zhun-gong-gao/">
+      百花谷：自动授权精准验号系统及买号筛选标准公告
+    </a>
+  </h1>
+  <div class="post-meta">
     
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2020</h2>
-        </div>    
-        
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-dou-yin-bu-dan-zai-kuai-su-bian-hua-de-shi-dai-kan-zhun-qu-shi-bi-qin-fen-geng-chong-yao/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              02-18
-              <small>百花谷：抖音补单：在快速变化的时代，看准趋势比勤奋更重要</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2018-07-18</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
     
-      
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-chao-ji-biao-qian-dan-1-fen-zhong-shi-xian-bao-bei-shou-ye-zhan-xian/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              02-18
-              <small>百花谷：超级标签单， 1分钟实现宝贝首页展现</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-bu-dan-ping-tai/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              02-16
-              <small>百花谷补单平台</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2019</h2>
-        </div>    
-        
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-ren-wu-mo-ban-kuai-su-fa-bu-ren-wu-fu-jiao-cheng/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              01-20
-              <small>百花谷：任务模板-快速发布任务（附教程）</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2018</h2>
-        </div>    
-        
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-zi-zhu-shen-he-ren-wu-shang-xian/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              12-30
-              <small>百花谷：自主审核任务上线</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-fang-duo-qu-dao-hun-shua-gao-fu-gou-lu-hei-ming-dan-guan-li-jiao-cheng/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              07-20
-              <small>百花谷：防多渠道混刷高复购率（黑名单管理教程）</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="http://ts0120.github.io/post/bai-hua-gu-zi-dong-shou-quan-jing-zhun-yan-hao-xi-tong-ji-mai-hao-shai-xuan-biao-zhun-gong-gao/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              07-18
-              <small>百花谷：自动授权精准验号系统及买号筛选标准公告</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>3分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>755<span class="pc-show">字数</span></span>
+    </span>
+  </div>
+</header>
+</div>
+              <div class="post-body next-md-body" id="post_body">
+                <p>淘宝稽查力度越来越大， 各种鱼塘、代放、地推、一对一验号、平台，链接一个个被降权，无论在哪放，商家们都有阴影。<br>
+现在市面上有很多说白名单资源等，百分百无降权，安全速起，降权包赔全额赔付；也有各种验号软件，质量参差不齐；<br>
+亮起火眼金睛，智者见智吧！只要是补单，就没有百分百安全的！<br>
+验号软件上，创客照妖镜商家用户比较多的，查降权，照妖镜相当于一个大数据库，商家越多，数据越多，但是这些数据不是精准的，可以作为参考；也有商家找我反馈说，有强制内部查号的软件的（不经过买手授权）；在此，我回复一下，这种不授权的软件，绝对不精准，它可以通过一些基本信息判断是狂刷号，90%软件都可以做到，但是安全系数，谁都不好说！<br>
+精准验号，买号授权和扫码防P是比较受认可的，实时抓取所需数据，更加准确！没有比这个查号方式，更安全更靠谱的！相信看见，眼见为实！</p>
+<p>百花谷自动授权精准验号视频：<a href="https://v.youku.com/v_show/id_XNDE0OTQ1MTA4NA==.html?spm=a2h3j.8428770.3416059.1">查看视频</a></p>
+<p>自动授权获取买号信息：<br>
+买手app登录做任务，自动授权获取买号信息，基本信息、花呗开通、淘气值、违规记录、评价管理周月、代收、标签、购物记录等等<br>
+买号筛选硬性条件：<br>
+买号满3心，半年，近期三个月无违规，淘气值500以上，这是最基本的硬性审核标准；通过验号系统判断，高危号，黑号，一律杜绝！<br>
+风判系统：<br>
+根据买号质量判断，优质买号日2单周10月40，普通买号日1单月30；稽查高危时期，所有买号1天1单；部分普通买号、黑号，禁止接单！<br>
+定期清理黑号：<br>
+平台的部分买号，部分刷了，就会出问题，所以我们坚持定期高频次清理黑号，稽查时期，更加谨慎！<br>
+资源导入：<br>
+平台几十万活跃买手，不定期导入老客户，也会有其他渠道刷手混入；我们优中选中，确保资源质量可靠性！<br>
+关于商家自主验号：<br>
+我们平台的买号质量是经得起推敲的！如果商家坚持自验号的，出现平台买号审核标准和商家审核标准不一样；务必在返款前申诉撤单，否则无法处理；可联系客服指导！<br>
+最后：<br>
+感谢商家们一如既往的支持和信赖！作为电商服务人，你们的所有需求和意见，我们都很乐意交流分享！有问题的，可以在平台意见反馈处进行留言或者联系我们客服！随时在线，随时服务您们!</p>
+<p><a href="http://985.so/jhvt">平台注册</a><br>
+<img src="http://ts0120.github.io/post-images/1582015893719.png" alt="" loading="lazy"><br>
+<img src="http://ts0120.github.io/post-images/1582015901649.png" alt="" loading="lazy"><br>
+<img src="http://ts0120.github.io/post-images/1582015906876.png" alt="" loading="lazy"></p>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      百花谷补单平台---介绍注册页
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ts0120.github.io/post/bai-hua-gu-zi-dong-shou-quan-jing-zhun-yan-hao-xi-tong-ji-mai-hao-shai-xuan-biao-zhun-gong-gao/" title="百花谷：自动授权精准验号系统及买号筛选标准公告">百花谷：自动授权精准验号系统及买号筛选标准公告</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
     
   </div>
-  
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
+  <div class="nav">
+    <div class="nav-prev">
       
-        <li class="pagination-li pagination-active">
-            <a href="/archives/page/../">
-              1
-            </a>
-        </li>
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="百花谷：防多渠道混刷高复购率（黑名单管理教程）" href="http://ts0120.github.io/post/bai-hua-gu-fang-duo-qu-dao-hun-shua-gao-fu-gou-lu-hei-ming-dan-guan-li-jiao-cheng/">百花谷：防多渠道混刷高复购率（黑名单管理教程）</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="百花谷：防多渠道混刷高复购率（黑名单管理教程）" href="http://ts0120.github.io/post/bai-hua-gu-fang-duo-qu-dao-hun-shua-gao-fu-gou-lu-hei-ming-dan-guan-li-jiao-cheng/">上一篇</a>
       
-    
-    
-  </ul>
+    </div>
+    <div class="nav-next">
+      
+    </div>
+  </div>
 </div>
-</div>
-
-            </section>
+              
+            </div>
           </div>
         </div>
       </div>
